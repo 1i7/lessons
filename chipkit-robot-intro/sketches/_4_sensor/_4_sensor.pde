@@ -25,5 +25,5 @@ void loop() {
     } else {
         // сенсор не сработал - гасим лампочку
         digitalWrite(LED_PIN, 0);
-    }    
+    }
 }
