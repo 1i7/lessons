@@ -5,8 +5,8 @@ module wheel_with_axis() {
   difference() {
     wheel();
     //generic_axis();
-    motor1_axis();
-    //motor2_axis();
+    //motor1_axis();
+    motor2_axis();
     //motor3_axis();
     //motor4_axis();
   }
@@ -68,14 +68,16 @@ module motor1_axis(length=22) {
  * Pololu 4.5V, 80rpm Right Angle (прямой, желтый)
  * www.robotshop.com/en/solarbotics-gm7-gear-motor-7.html
  *
- * Диаметр оси мотора 3мм, срез с одного бока 1мм.
+ * Диаметр оси мотора 3мм, срез с одного бока 0,5мм.
  */
 module motor2_axis(length=22) {
-  // диаметр 3мм, срез с одного бока 1мм
+  // диаметр 3мм, срез с одного бока 0,5мм
   translate([0,0,-1])
   difference() {
     cylinder(h=length, r=1.5, $fn=20);
-    translate([0.75, -1.5, 0]) 
+    // 1,5 мм "вниз" по y (совместить куб с цилиндром), 
+    // 1 "вправо" по x (срезать справа 0,5мм: 1,5-0,5=1)
+    translate([1, -1.5, 0]) 
       cube([2, 3, length]);
   }
 }
