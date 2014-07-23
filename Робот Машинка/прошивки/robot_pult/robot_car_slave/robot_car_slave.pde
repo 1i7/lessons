@@ -474,6 +474,9 @@ void setup() {
     pinMode(MOTOR_LEFT_2, OUTPUT);
     pinMode(MOTOR_RIGHT_1, OUTPUT);
     pinMode(MOTOR_RIGHT_2, OUTPUT);
+    
+    // остановить колеса, если они будут крутиться
+    cmd_stop();
 }
     
 void loop() {

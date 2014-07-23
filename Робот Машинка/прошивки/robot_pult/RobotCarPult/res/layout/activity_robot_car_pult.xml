@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     android:fillViewport="true"
     android:scrollbars="vertical"
-    tools:context=".RobotPultActivity" >
+    tools:context=".RobotCarPultActivity" >
 
     <LinearLayout
         android:layout_width="match_parent"

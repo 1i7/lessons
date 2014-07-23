@@ -13,7 +13,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class RobotPultActivity extends Activity {
+public class RobotCarPultActivity extends Activity {
 
     /**
      * Обратный вызов для получения результата выполения команды, добавленной в
@@ -115,8 +115,10 @@ public class RobotPultActivity extends Activity {
                     serverIn = socket.getInputStream();
 
                     debug("Connected");
+                    // TODO: разобраться, почему на этой строке может подвисать
                     connectionInfo = socket.getInetAddress().getHostName()
                             + ":" + socket.getPort();
+                    debug("Connection info: " + connectionInfo);
                     setConnectionStatus(ConnectionStatus.CONNECTED);
 
                     // Подключились к серверу, теперь можно отправлять команды
@@ -184,7 +186,7 @@ public class RobotPultActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_robot_pult);
+        setContentView(R.layout.activity_robot_car_pult);
 
         txtStatus = (TextView) findViewById(R.id.txt_status);
         txtDebug = (TextView) findViewById(R.id.txt_debug);
@@ -213,7 +215,7 @@ public class RobotPultActivity extends Activity {
                             @Override
                             public void run() {
                                 Toast.makeText(
-                                        RobotPultActivity.this,
+                                        RobotCarPultActivity.this,
                                         "Command: " + cmd + "\n" + "Reply: "
                                                 + reply, Toast.LENGTH_SHORT)
                                         .show();
@@ -239,7 +241,7 @@ public class RobotPultActivity extends Activity {
                             @Override
                             public void run() {
                                 Toast.makeText(
-                                        RobotPultActivity.this,
+                                        RobotCarPultActivity.this,
                                         "Command: " + cmd + "\n" + "Reply: "
                                                 + reply, Toast.LENGTH_SHORT)
                                         .show();
@@ -265,7 +267,7 @@ public class RobotPultActivity extends Activity {
                             @Override
                             public void run() {
                                 Toast.makeText(
-                                        RobotPultActivity.this,
+                                        RobotCarPultActivity.this,
                                         "Command: " + cmd + "\n" + "Reply: "
                                                 + reply, Toast.LENGTH_SHORT)
                                         .show();
@@ -291,7 +293,7 @@ public class RobotPultActivity extends Activity {
                             @Override
                             public void run() {
                                 Toast.makeText(
-                                        RobotPultActivity.this,
+                                        RobotCarPultActivity.this,
                                         "Command: " + cmd + "\n" + "Reply: "
                                                 + reply, Toast.LENGTH_SHORT)
                                         .show();
@@ -317,7 +319,7 @@ public class RobotPultActivity extends Activity {
                             @Override
                             public void run() {
                                 Toast.makeText(
-                                        RobotPultActivity.this,
+                                        RobotCarPultActivity.this,
                                         "Command: " + cmd + "\n" + "Reply: "
                                                 + reply, Toast.LENGTH_SHORT)
                                         .show();
@@ -365,6 +367,7 @@ public class RobotPultActivity extends Activity {
     }
 
     private void setConnectionStatus(final ConnectionStatus status) {
+        System.out.println("setConnectionStatus: " + status);
         this.connectionStatus = status;
         handler.post(new Runnable() {
             @Override
@@ -448,6 +451,7 @@ public class RobotPultActivity extends Activity {
      * Обновить элементы управления в зависимости от текущего состояния.
      */
     private void updateViews() {
+        System.out.println("updateViews: " + connectionStatus);
 
         switch (connectionStatus) {
         case DISCONNECTED:
