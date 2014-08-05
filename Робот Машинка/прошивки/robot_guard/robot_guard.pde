@@ -1,10 +1,11 @@
-// Робот Машинка в роли Часового: едет вперед, разворачивается,
-// едет обратно.
+// Робот Машинка в роли Часового: едет вперед, 
+// разворачивается, едет обратно.
 
 // Ножки для моторов
 #define MOTOR_LEFT_1 8
 #define MOTOR_LEFT_2 9
 #define MOTOR_LEFT_EN 11
+
 #define MOTOR_RIGHT_1 4
 #define MOTOR_RIGHT_2 3
 #define MOTOR_RIGHT_EN 6
@@ -81,4 +82,10 @@ void loop() {
     mright_stop();
     delay(1000);
 }
+
+
+
+
+
+
 
