@@ -17,11 +17,13 @@ const char* CMD_PING = "ping";
 const char* REPLY_OK = "ok";
 const char* REPLY_DONTUNDERSTAND = "dontunderstand";
 
-// Пин для тестовой лампочки
-#define MOTOR_LEFT_1 6
-#define MOTOR_LEFT_2 5
+// Ножки для моторов
+#define MOTOR_LEFT_1 8
+#define MOTOR_LEFT_2 9
+#define MOTOR_LEFT_EN 11
 #define MOTOR_RIGHT_1 4
 #define MOTOR_RIGHT_2 3
+#define MOTOR_RIGHT_EN 6
 
 // Значения для подключений
 
@@ -338,34 +340,49 @@ int connectWifi(DNETcK::STATUS *netStatus) {
 }
 
 void mleft_forward() {
+    // задать направление
     digitalWrite(MOTOR_LEFT_1, HIGH);
     digitalWrite(MOTOR_LEFT_2, LOW);
+    
+    // включить моторы
+    digitalWrite(MOTOR_LEFT_EN, HIGH);
 }
 
 void mleft_backward() {
+    // задать направление
     digitalWrite(MOTOR_LEFT_1, LOW);
     digitalWrite(MOTOR_LEFT_2, HIGH);
+    
+    // включить моторы
+    digitalWrite(MOTOR_LEFT_EN, HIGH);
 }
 
 void mleft_stop() {
-    digitalWrite(MOTOR_LEFT_1, LOW);
-    digitalWrite(MOTOR_LEFT_2, LOW);
+    // выключить моторы
+    digitalWrite(MOTOR_LEFT_EN, LOW);
 }
 
-
 void mright_forward() {
+    // задать направление
     digitalWrite(MOTOR_RIGHT_1, HIGH);
     digitalWrite(MOTOR_RIGHT_2, LOW);
+    
+    // включить моторы
+    digitalWrite(MOTOR_RIGHT_EN, HIGH);
 }
 
 void mright_backward() {
+    // задать направление
     digitalWrite(MOTOR_RIGHT_1, LOW);
     digitalWrite(MOTOR_RIGHT_2, HIGH);
+    
+    // включить моторы
+    digitalWrite(MOTOR_RIGHT_EN, HIGH);
 }
 
 void mright_stop() {
-    digitalWrite(MOTOR_RIGHT_1, LOW);
-    digitalWrite(MOTOR_RIGHT_2, LOW);
+    // выключить моторы
+    digitalWrite(MOTOR_RIGHT_EN, LOW);
 }
 
 
@@ -472,8 +489,14 @@ void setup() {
 
     pinMode(MOTOR_LEFT_1, OUTPUT);
     pinMode(MOTOR_LEFT_2, OUTPUT);
+    pinMode(MOTOR_LEFT_EN, OUTPUT);
+    
     pinMode(MOTOR_RIGHT_1, OUTPUT);
     pinMode(MOTOR_RIGHT_2, OUTPUT);
+    pinMode(MOTOR_RIGHT_EN, OUTPUT);
+    
+    digitalWrite(MOTOR_LEFT_EN, 1);
+    digitalWrite(MOTOR_RIGHT_EN, 1);
     
     // остановить колеса, если они будут крутиться
     cmd_stop();
