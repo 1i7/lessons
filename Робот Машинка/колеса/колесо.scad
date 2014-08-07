@@ -1,14 +1,16 @@
+// левое колесо
 wheel_with_axis();
+// правое колесо
+//mirror([0, 0, -1]) wheel_with_axis();
+
 
 /** Колесо с отверстием под ось */
 module wheel_with_axis() {
   difference() {
     wheel();
-    //generic_axis();
+    generic_axis();
     //motor1_axis();
-    motor2_axis();
-    //motor3_axis();
-    //motor4_axis();
+    //motor2_axis();
   }
 }
 
@@ -82,36 +84,3 @@ module motor2_axis(length=22) {
   }
 }
 
-/** 
- * Ось для для мотора 3:
- * GM2 - Gear Motor 2 Offset Shaft (угловой, белый)
- * http://www.robotshop.com/en/solarbotics-gm2-gear-motor-2-offset.html
- *
- * Диаметр оси мотора 2мм, сделаем модель 1,5мм.
- */
-module motor3_axis(length=22) {
-  // 1,5мм диаметр
-  translate([0,0,-1])
-    cylinder(h=length, r=0.75, $fn=20);
-}
-
-/** 
- * Ось для для мотора 4:
- * DFRobot 6V,180rpm Micro DC Geared (угловой, желтый)
- * www.robotshop.com/en/dfrobot-6v-180-rpm-micro-dc-geared-motor-with-back-shaft.html
- *
- * Диаметр оси мотора 5мм, срезы по бокам 
- * (3мм сердцевина).
- */
-module motor4_axis(length=22) {
-  // 5мм диаметр, 
-  // срезы по бокам (3мм сердцевина)
-  translate([0,0,-1])
-  difference() {
-    cylinder(h=length, r=2.5, $fn=22);
-    translate([1.5, -2.5, 0]) 
-      cube([2.5, 5, length]);
-    translate([-2.5-1.5, -2.5, 0]) 
-      cube([2.5, 5, length]);
-  }
-}
