@@ -494,10 +494,7 @@ void setup() {
     pinMode(MOTOR_RIGHT_1, OUTPUT);
     pinMode(MOTOR_RIGHT_2, OUTPUT);
     pinMode(MOTOR_RIGHT_EN, OUTPUT);
-    
-    digitalWrite(MOTOR_LEFT_EN, 1);
-    digitalWrite(MOTOR_RIGHT_EN, 1);
-    
+        
     // остановить колеса, если они будут крутиться
     cmd_stop();
 }
