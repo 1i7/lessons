@@ -9,6 +9,12 @@
 #define MOTOR_RIGHT_2 3
 #define MOTOR_RIGHT_EN 6
 
+/**
+ * Сенсор звука: сенсор подключен к входной ножке и 
+ * подает на нее сигнал:
+ * 0, если сенсор обнаружил звук,
+ * 1, если сенсор звук не слышит.
+ */
 #define SOUND_SENSOR_PIN 28
 
 boolean run_forward = false;
