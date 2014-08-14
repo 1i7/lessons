@@ -1,0 +1,10 @@
+English
+All code in this repository is public domain - copy/paste it to your projects with no problems.
+
+All content (slides and models) is Creative Commons Attribution license
+author: Anton Moiseev
+link to: http://1i7.livejournal.com
+link to source: https://github.com/1i7/lessons
+
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Лицензия Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />Это произведение, автор которого — <a xmlns:cc="http://creativecommons.org/ns#" href="http://1i7.livejournal.com" property="cc:attributionName" rel="cc:attributionURL">Anton Moiseev</a>, доступно на условиях <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">лицензии Creative Commons «Attribution» («Атрибуция») 4.0 Всемирная</a>.<br />Основано на произведении с <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/1i7/lessons" rel="dct:source">https://github.com/1i7/lessons</a>.
+
