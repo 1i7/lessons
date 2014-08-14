@@ -31,6 +31,7 @@ const char* REPLY_DONTUNDERSTAND = "dontunderstand";
 const char* wifi_ssid = "lasto4ka";
 const char* wifi_wpa2_passphrase = "robotguest";
 
+
 // Сервер Роботов
 const char* robot_server_host = "robotc.lasto4ka.su";
 //const char* robot_server_host = "192.168.1.3";
@@ -465,7 +466,7 @@ int handleInput(char* buffer, int size, char* reply_buffer) {
 
 void setup() {
     Serial.begin(9600);
-    Serial.println("Start wifi network client demo");
+    Serial.println("Start Robot Car as Robot Server client");
 
     // Ножки для моторов
     pinMode(MOTOR_LEFT_1, OUTPUT);
