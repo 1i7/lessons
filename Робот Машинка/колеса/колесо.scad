@@ -46,9 +46,9 @@ module wheel() {
 
 /**
  * Просто круглая ось, по умолчанию 
- * диаметр 1,5мм 
+ * диаметр 2мм 
  */
-module generic_axis(length=22, radius=0.75) {
+module generic_axis(length=22, radius=1) {
   translate([0,0,-1])
     cylinder(h=length, r=radius, $fn=20);
 }
