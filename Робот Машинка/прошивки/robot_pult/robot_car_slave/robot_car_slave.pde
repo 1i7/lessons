@@ -485,7 +485,7 @@ int handleInput(char* buffer, int size, char* reply_buffer) {
 
 void setup() {
     Serial.begin(9600);
-    Serial.println("Start WiFi network and Tcp server demo");
+    Serial.println("Start Robot Car WiFi pult slave");
 
     pinMode(MOTOR_LEFT_1, OUTPUT);
     pinMode(MOTOR_LEFT_2, OUTPUT);
