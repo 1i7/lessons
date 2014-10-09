@@ -157,7 +157,7 @@ void cmd_stop() {
 int handleInput(char* buffer, int buffer_size, char* reply_buffer) {
     // добавим к входным данным завершающий ноль, 
     // чтобы рассматривать их как корректную строку
-    read_buffer[buffer_size] = 0;
+    buffer[buffer_size] = 0;
     
     // ответ
     int replySize = 0;
